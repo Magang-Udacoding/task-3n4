@@ -191,6 +191,95 @@ loadTodos();
 renderTodos();
 
 
+// =============================================
+// TASK 4 — WEATHER API INTEGRATION
+// =============================================
+
+// ambil elemen HTML weather
+const inputCity = document.getElementById("input-city");
+const btnSearch = document.getElementById("btn-search");
+const weatherDisplay = document.getElementById("weather-display");
+
+// API key OpenWeatherMap
+const apiKey = '28abfb50961d28dec26de428d3548a1c';
+
+// handle input search
+function handleSearch() {
+  const city = inputCity.value.trim();
+  if (city === "") return;
+  getWeather(city);
+}
+
+// fetch data cuaca dari OpenWeatherMap
+async function getWeather(city) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  weatherDisplay.innerHTML = `<p class="weather-loading">Mencari data cuaca...</p>`;
+  btnSearch.disabled = true;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Kota tidak ditemukan");
+    }
+
+    displayWeather(data);
+
+  } catch (error) {
+    weatherDisplay.innerHTML = `<p class="weather-error">❌ ${error.message}</p>`;
+  } finally {
+    btnSearch.disabled = false;
+  }
+}
+
+// tentukan ikon lokal berdasarkan weather ID
+function getLocalIcon(weatherId) {
+  if (weatherId === 800) return "weather icon/1.png";                    // clear sky
+  if (weatherId >= 801 && weatherId <= 802) return "weather icon/2.png"; // few/scattered clouds
+  if (weatherId >= 803 && weatherId <= 804) return "weather icon/3.png"; // broken/overcast clouds
+  return "weather icon/4.png";                                            // hujan, petir, dll
+}
+
+// tampilkan data cuaca ke DOM
+function displayWeather(data) {
+  const city = data.name;
+  const temp = Math.round(data.main.temp);
+  const feelsLike = Math.round(data.main.feels_like);
+  const humidity = data.main.humidity;
+  const description = data.weather[0].description;
+  const weatherId = data.weather[0].id;
+  const windSpeed = data.wind.speed;
+  const iconUrl = getLocalIcon(weatherId);
+
+  weatherDisplay.innerHTML = `
+    <div class="weather-card">
+      <img class="weather-icon" src="${iconUrl}" alt="${description}" />
+      <div class="weather-main">
+        <div class="weather-city">${city}</div>
+        <div class="weather-temp">${temp}°C</div>
+        <div class="weather-desc">${description}</div>
+      </div>
+      <div class="weather-details">
+        <span>💧 ${humidity}%</span>
+        <span>🌡️ ${feelsLike}°C</span>
+        <span>💨 ${windSpeed} m/s</span>
+      </div>
+    </div>
+  `;
+}
+
+// event listener tombol search dan Enter
+btnSearch.addEventListener("click", handleSearch);
+inputCity.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") handleSearch();
+});
+
+// auto-load cuaca Jakarta saat halaman pertama dibuka
+getWeather("Jakarta");
+
+
 // drag & drop (reorder todos)
 let draggedItem = null;
 

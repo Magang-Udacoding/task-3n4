@@ -234,3 +234,136 @@ body {
 .empty-state.show {
   display: block;
 }
+
+
+/* =============================================
+   WEATHER SECTION
+   ============================================= */
+
+body {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #f0f7f0;
+}
+
+/* container cuaca */
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(27, 94, 32, 0.15);
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* search bar */
+.search-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  outline: none;
+  color: #1b5e20;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.search-bar button {
+  padding: 10px 16px;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.search-bar button:hover {
+  background: #1b5e20;
+  transform: scale(1.05);
+}
+
+.search-bar button:disabled {
+  background: #a5d6a7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* weather card */
+.weather-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 0;
+}
+
+.weather-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.weather-main {
+  flex: 1;
+}
+
+.weather-city {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.weather-temp {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1b5e20;
+  line-height: 1.1;
+}
+
+.weather-desc {
+  font-size: 13px;
+  color: #66bb6a;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #388e3c;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* loading & error state */
+.weather-loading {
+  text-align: center;
+  color: #81c784;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.weather-error {
+  text-align: center;
+  color: #e53935;
+  font-size: 14px;
+  padding: 10px 0;
+}
