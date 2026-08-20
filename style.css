@@ -1,0 +1,236 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 16px;
+}
+
+/* === APP CONTAINER === */
+.app {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(27, 94, 32, 0.15);
+  padding: 32px 28px;
+}
+
+/* === HEADER === */
+.app-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2e7d32;
+  text-align: center;
+}
+
+/* === FORM & INPUT === */
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  border: 2px solid #a5d6a7;
+  border-radius: 10px;
+  outline: none;
+  color: #1b5e20;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.todo-input::placeholder {
+  color: #81c784;
+}
+
+.todo-input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+/* === FILTERS === */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-filter {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  border: 1.5px solid #a5d6a7;
+  border-radius: 20px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-filter:hover {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+
+.btn-filter.active {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: #fff;
+}
+
+.count {
+  margin-left: auto;
+  font-size: 13px;
+  color: #66bb6a;
+  font-weight: 600;
+}
+
+/* === TODO LIST === */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* === TODO ITEM === */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #fefffc;
+  border: 1.5px solid #c8e6c9;
+  border-radius: 10px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  cursor: grab;
+}
+
+.todo-item:hover {
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.12);
+}
+
+.todo-item.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+.todo-item.drag-over {
+  border-color: #2e7d32;
+  background: #e8f5e9;
+}
+
+/* === CHECKBOX === */
+.todo-check {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid #a5d6a7;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background: #fff;
+}
+
+.todo-check:hover {
+  border-color: #2e7d32;
+}
+
+.todo-item.completed .todo-check {
+  background: #2e7d32;
+  border-color: #2e7d32;
+}
+
+.todo-item.completed .todo-check::after {
+  content: "\2713";
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* === TODO TEXT === */
+.todo-text {
+  flex: 1;
+  font-size: 14px;
+  color: #2e7d32;
+  word-break: break-word;
+  transition: all 0.2s;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #a5d6a7;
+}
+
+/* === TODO DATE === */
+.todo-date {
+  font-size: 11px;
+  color: #81c784;
+  white-space: nowrap;
+}
+
+/* === DELETE BUTTON === */
+.todo-delete {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #ef9a9a;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.todo-delete:hover {
+  color: #e53935;
+  transform: scale(1.2);
+}
+
+/* === EDIT INPUT (saat double-click) === */
+.todo-input-edit {
+  flex: 1;
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  padding: 4px 8px;
+  border: 1.5px solid #2e7d32;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #1b5e20;
+}
+
+/* === EMPTY STATE === */
+.empty-state {
+  text-align: center;
+  color: #a5d6a7;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 20px 0;
+  display: none;
+}
+
+.empty-state.show {
+  display: block;
+}

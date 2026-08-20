@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Todos App</title>
+  </head>
+  <body>
+    <main class="app">
+      <!-- header -->
+      <header class="app-header">
+        <h2>Your Task Today</h2>
+      </header>
+
+      <!-- form -->
+      <form class="todo-form" id="todo-form">
+        <input
+          type="text"
+          class="todo-input"
+          id="todo-input"
+          placeholder="What will you do? (enter)"
+        />
+      </form>
+
+      <!-- filters -->
+      <nav class="filters" id="filters">
+        <button class="btn-filter active" data-filter="all">All</button>
+        <button class="btn-filter" data-filter="active">Active</button>
+        <button class="btn-filter" data-filter="completed">Done</button>
+        <span class="count" id="items-left"></span>
+      </nav>
+
+      <ul class="todo-list" id="todo-list"></ul>
+      <p class="empty-state" id="empty-state">No Todos? Add one above!</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
