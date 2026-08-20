@@ -276,8 +276,8 @@ inputCity.addEventListener("keydown", function (e) {
   if (e.key === "Enter") handleSearch();
 });
 
-// auto-load cuaca Jakarta saat halaman pertama dibuka
-getWeather("Jakarta");
+// auto-load cuaca Padang saat halaman pertama dibuka
+getWeather("Padang");
 
 
 // drag & drop (reorder todos)
