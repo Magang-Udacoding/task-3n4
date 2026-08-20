@@ -1,29 +1,18 @@
-# Task 3 & 4 — Todo App + Weather Integration
+# Task 3 dan 4: Todos App + Weather API 
 
-Proyek magang Udacoding — Vanilla JavaScript.
+### Fail Hylmi Khalil
+#### Politeknik Negeri Padang
 
-## Stack
-- HTML, CSS, Vanilla JavaScript
-- Fetch API + Async/Await
-- OpenWeatherMap API (Task 4)
+## What I've Done
+- Todos: Array objects {id, text, completed, date}
+- CRUD: add (Enter), edit (double-click), delete (X), toggle check
+- Filter: Real-time UI update + localStorage sync
+- Drag & drop: Reorder antar todos
+- weather with openWeather, api tertera
 
-## Git Workflow
-Branch strategy yang digunakan:
-- `main` — kode stabil / production-ready
-- `feature/weather-api` — pengembangan integrasi cuaca (Task 4)
+## What I've *not* Done
 
-## Task 3 — Todo App
-Aplikasi todo list dengan fitur:
-- Tambah, hapir, dan tandai task selesai
-- Filter tugas (All / Active / Completed)
-- Persistent storage dengan LocalStorage
-- Responsive design
 
-## Task 4 — Real Weather API *(coming soon)*
-Upgrade Todo App dengan integrasi cuaca Jakarta real-time:
-- Fetch data dari OpenWeatherMap API
-- Tampilkan suhu, kondisi cuaca, dan ikon cuaca
-- Auto-load saat halaman dibuka
-
----
-*Magang Udacoding — Semester 7*
+## Links
+- Article Medium [Medium Task 3](https://medium.com/@hylmikhalil/kenapa-vanilla-ada-di-dunia-programming-deb993924597).
+- Article Medium [Medium Task 4](https://medium.com/@hylmikhalil/i-prefer-to-use-fastfetch-instead-neofetch-why-2a9e12e95c45).
