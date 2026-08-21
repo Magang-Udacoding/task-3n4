@@ -1,4 +1,4 @@
-// ambil elemen HTML
+// ambil elemen html
 const form = document.getElementById("todo-form");
 const input = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
@@ -31,7 +31,7 @@ function addTodo(text) {
   renderTodos();
 }
 
-// addEventListener submit pada form
+// add event listener submit pada form
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -87,8 +87,8 @@ function updateCount() {
 }
 
 
-// toggle selesai / belum selesai
-// pakai event delegation karena todo-item dibuat dinamis oleh js
+// toggle selesai belum selesai
+// pakai event delegation karena todo item dibuat dinamis oleh js
 todoList.addEventListener("click", function (e) {
   const li = e.target.closest(".todo-item");
   if (!li) return;
@@ -125,7 +125,7 @@ function deleteTodo(id) {
 }
 
 
-// edit todo (double-click)
+// edit todo double click
 todoList.addEventListener("dblclick", function (e) {
   if (!e.target.classList.contains("todo-text")) return;
 
@@ -174,7 +174,7 @@ filtersContainer.addEventListener("click", function (e) {
   renderTodos();
 });
 
-// localStorage
+// local storage
 function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
@@ -191,16 +191,13 @@ loadTodos();
 renderTodos();
 
 
-// =============================================
-// TASK 4 — WEATHER API INTEGRATION
-// =============================================
-
-// ambil elemen HTML weather
+// task 4 weather api
+// ambil elemen html weather
 const inputCity = document.getElementById("input-city");
 const btnSearch = document.getElementById("btn-search");
 const weatherDisplay = document.getElementById("weather-display");
 
-// API key OpenWeatherMap
+// api key openweathermap
 const apiKey = '28abfb50961d28dec26de428d3548a1c';
 
 // handle input search
@@ -210,7 +207,7 @@ function handleSearch() {
   getWeather(city);
 }
 
-// fetch data cuaca dari OpenWeatherMap
+// fetch data cuaca dari openweathermap
 async function getWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -234,15 +231,15 @@ async function getWeather(city) {
   }
 }
 
-// tentukan ikon lokal berdasarkan weather ID
+// tentukan ikon lokal berdasarkan weather id
 function getLocalIcon(weatherId) {
   if (weatherId === 800) return "weather icon/1.png";                    // clear sky
-  if (weatherId >= 801 && weatherId <= 802) return "weather icon/2.png"; // few/scattered clouds
-  if (weatherId >= 803 && weatherId <= 804) return "weather icon/3.png"; // broken/overcast clouds
-  return "weather icon/4.png";                                            // hujan, petir, dll
+  if (weatherId >= 801 && weatherId <= 802) return "weather icon/2.png"; // few scattered clouds
+  if (weatherId >= 803 && weatherId <= 804) return "weather icon/3.png"; // broken overcast clouds
+  return "weather icon/4.png";                                            // hujan petir dll
 }
 
-// tampilkan data cuaca ke DOM
+// tampilkan data cuaca ke dom
 function displayWeather(data) {
   const city = data.name;
   const temp = Math.round(data.main.temp);
@@ -270,17 +267,17 @@ function displayWeather(data) {
   `;
 }
 
-// event listener tombol search dan Enter
+// event listener tombol search dan enter
 btnSearch.addEventListener("click", handleSearch);
 inputCity.addEventListener("keydown", function (e) {
   if (e.key === "Enter") handleSearch();
 });
 
-// auto-load cuaca Padang saat halaman pertama dibuka
+// auto load cuaca padang saat halaman pertama dibuka
 getWeather("Padang");
 
 
-// drag & drop (reorder todos)
+// drag drop reorder todos
 let draggedItem = null;
 
 todoList.addEventListener("dragstart", function (e) {

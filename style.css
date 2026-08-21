@@ -17,7 +17,7 @@ body {
   padding: 30px 16px;
 }
 
-/* === APP CONTAINER === */
+/* app container */
 .app {
   width: 100%;
   max-width: 500px;
@@ -30,7 +30,7 @@ body {
   padding: 32px 28px;
 }
 
-/* === HEADER === */
+/* header */
 .app-header h2 {
   font-size: 24px;
   font-weight: 700;
@@ -38,7 +38,7 @@ body {
   text-align: center;
 }
 
-/* === FORM & INPUT === */
+/* form input */
 .todo-form {
   display: flex;
   gap: 8px;
@@ -65,7 +65,7 @@ body {
   box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
 }
 
-/* === FILTERS === */
+/* filters */
 .filters {
   display: flex;
   align-items: center;
@@ -104,7 +104,7 @@ body {
   font-weight: 600;
 }
 
-/* === TODO LIST === */
+/* todo list */
 .todo-list {
   list-style: none;
   display: flex;
@@ -112,7 +112,7 @@ body {
   gap: 8px;
 }
 
-/* === TODO ITEM === */
+/* todo item */
 .todo-item {
   display: flex;
   align-items: center;
@@ -139,7 +139,7 @@ body {
   background: #e8f5e9;
 }
 
-/* === CHECKBOX === */
+/* checkbox */
 .todo-check {
   width: 20px;
   height: 20px;
@@ -170,7 +170,7 @@ body {
   font-weight: 700;
 }
 
-/* === TODO TEXT === */
+/* todo text */
 .todo-text {
   flex: 1;
   font-size: 14px;
@@ -184,14 +184,14 @@ body {
   color: #a5d6a7;
 }
 
-/* === TODO DATE === */
+/* todo date */
 .todo-date {
   font-size: 11px;
   color: #81c784;
   white-space: nowrap;
 }
 
-/* === DELETE BUTTON === */
+/* delete button */
 .todo-delete {
   background: none;
   border: none;
@@ -208,7 +208,7 @@ body {
   transform: scale(1.2);
 }
 
-/* === EDIT INPUT (saat double-click) === */
+/* edit input saat double click */
 .todo-input-edit {
   flex: 1;
   font-size: 14px;
@@ -221,7 +221,7 @@ body {
   color: #1b5e20;
 }
 
-/* === EMPTY STATE === */
+/* empty state */
 .empty-state {
   text-align: center;
   color: #a5d6a7;
@@ -236,9 +236,7 @@ body {
 }
 
 
-/* =============================================
-   WEATHER SECTION
-   ============================================= */
+/* weather section */
 
 body {
   flex-direction: column;
@@ -353,7 +351,7 @@ body {
   text-align: right;
 }
 
-/* loading & error state */
+/* loading error state */
 .weather-loading {
   text-align: center;
   color: #81c784;
