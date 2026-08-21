@@ -259,9 +259,9 @@ function displayWeather(data) {
         <div class="weather-desc">${description}</div>
       </div>
       <div class="weather-details">
-        <span>💧 ${humidity}%</span>
-        <span>🌡️ ${feelsLike}°C</span>
-        <span>💨 ${windSpeed} m/s</span>
+        <span>Kelembapan: ${humidity}%</span>
+        <span>Terasa: ${feelsLike}°C</span>
+        <span>Kecepatan angin: ${windSpeed} m/s</span>
       </div>
     </div>
   `;
