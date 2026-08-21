@@ -23,7 +23,7 @@ function addTodo(text) {
       day: "2-digit",
       month: "2-digit",
       year: "numeric"
-    }).split("/").join("")
+    }).split("//").join("")
   };
 
   todos.push(todo);
